@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
+    <div className="container">
     <Routes>
       <Route path="/posts" element={<PostList />} />
       <Route path="/posts/:id" element={
