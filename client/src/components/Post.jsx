@@ -5,12 +5,12 @@ import { CommentForm } from "./CommentForm"
 import { CommentList } from "./CommentList"
 export default function Post(){
 // const {loading, error, value: post } = usePostContext()
-const { post, rootComments } = usePostContext()
+const { post, rootComments, createLocalComment } = usePostContext()
 const {loading, error, execute:createCommentFn } = useAsyncFn(createComment)
 
 function onCommentCreate(message){
     return createCommentFn({postId: post.id, message}).then(comment => {
-        console.log(comment)
+        createLocalComment(comment)
     })
 }
     // if(error) return (<h4>{error}</h4>)
